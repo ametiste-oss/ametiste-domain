@@ -1,0 +1,3 @@
+rootProject.name = 'ametiste-domain'
+include 'ametiste-domain-core'
+
