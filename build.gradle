@@ -3,6 +3,10 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'maven'
     apply plugin: 'idea'
+
+    apply from: "https://raw.githubusercontent.com/ametiste-oss/ametiste-bintray-gradle/master/bintray-ext-ame-oss.gradle"
+    apply from: "https://raw.githubusercontent.com/ametiste-oss/ametiste-bintray-gradle/master/bintray-ext.gradle"
+
     apply plugin: 'maven-publish'
 
     sourceCompatibility = 1.8
@@ -28,6 +32,10 @@ subprojects {
     task javadocJar(type: Jar, dependsOn: javadoc) {
         classifier = 'javadoc'
         from javadoc.destinationDir
+    }
+
+    ext {
+        bintray_vcsUrl = 'https://github.com/ametiste-oss/ametiste-domain.git'
     }
 
     artifacts {
