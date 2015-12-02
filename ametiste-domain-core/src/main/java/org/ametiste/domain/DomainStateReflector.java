@@ -13,7 +13,7 @@ package org.ametiste.domain;
  *
  * <p>
  *  The clients of the interface must provide the concrete implementation of the
- *  {@link com.dph.domain.DomainReflection} interface as the recepient of reflection.
+ *  {@link DomainReflection} interface as the recepient of reflection.
  * </p>
  * @since
  */
