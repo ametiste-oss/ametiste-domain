@@ -13,12 +13,12 @@ import java.util.function.Function;
 public class AccumulationInstant<I, A, T> {
 
     private final List<Consumer<T>> consumers = new ArrayList<>();
-    private final Function<A, T> consumer;
+    private final Function<A, T> method;
     private T data;
     private final AggregateInstant<I,A> aggregateInstant;
 
-    public AccumulationInstant(Function<A, T> consumer, AggregateInstant<I,A> aggregateInstant) {
-        this.consumer = consumer;
+    public AccumulationInstant(Function<A, T> method, AggregateInstant<I,A> aggregateInstant) {
+        this.method = method;
         this.aggregateInstant = aggregateInstant;
     }
 
@@ -32,7 +32,7 @@ public class AccumulationInstant<I, A, T> {
     }
 
     void accumulateData(A aggregate) {
-        this.data = consumer.apply(aggregate);
+        this.data = method.apply(aggregate);
     }
 
     void riseData() {
