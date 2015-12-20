@@ -27,8 +27,9 @@ public class AccumulationInstant<I, A, T> {
         return this;
     }
 
-    public void done() {
+    public T done() {
         aggregateInstant.done();
+        return data;
     }
 
     void accumulateData(A aggregate) {
